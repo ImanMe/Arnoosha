@@ -10,3 +10,6 @@ C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Infrastructure\obj\Debug\netc
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Infrastructure\obj\Debug\netcoreapp3.1\Arnoosha.Infrastructure.csproj.CopyComplete
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Infrastructure\obj\Debug\netcoreapp3.1\Arnoosha.Infrastructure.dll
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Infrastructure\obj\Debug\netcoreapp3.1\Arnoosha.Infrastructure.pdb
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Infrastructure\bin\Debug\netcoreapp3.1\Data\SeedData\brands.json
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Infrastructure\bin\Debug\netcoreapp3.1\Data\SeedData\products.json
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Infrastructure\bin\Debug\netcoreapp3.1\Data\SeedData\types.json

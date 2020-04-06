@@ -1,25 +1,23 @@
-﻿using Arnoosha.Infrastructure.Data;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Arnoosha.Infrastructure.Data;
+using Arnoosha.Core.Interfaces;
 
 namespace Arnoosha.API.Controllers
 {
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
-        private readonly StoreContext _context;
+        private readonly IProductRepository _productRepository;
 
-        public ProductsController(StoreContext context)
+        public ProductsController(IProductRepository productRepository)
         {
-            _context = context;
+            _productRepository = productRepository;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var result = await _context.Products.ToListAsync();
+            var result = await _productRepository.GetProductsAsync();
             if (result == null) return NotFound("No products available");
             return Ok(result);
         }
@@ -27,9 +25,21 @@ namespace Arnoosha.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var result = await _context.Products.FindAsync(id);
+            var result = await _productRepository.GetProductByIdAsync(id);
             if (result == null) return NotFound("No product with that id");
             return Ok(result);
+        }
+
+        [HttpGet("brands")]
+        public async Task<IActionResult> GetProductBrands()
+        {
+            return Ok(await _productRepository.GetProductBrandsAsync());
+        }
+
+        [HttpGet("types")]
+        public async Task<IActionResult> GetProductTypes()
+        {
+            return Ok(await _productRepository.GetProductTypesAsync());
         }
     }
 }

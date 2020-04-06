@@ -61,3 +61,6 @@ C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\s
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.dll
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.pdb
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.genruntimeconfig.cache
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\Data\SeedData\brands.json
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\Data\SeedData\products.json
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\Data\SeedData\types.json

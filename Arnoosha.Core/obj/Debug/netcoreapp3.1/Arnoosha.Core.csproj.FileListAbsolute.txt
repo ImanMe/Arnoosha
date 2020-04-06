@@ -6,3 +6,4 @@ C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.AssemblyInfo.cs
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.dll
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.pdb
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.csprojAssemblyReference.cache
