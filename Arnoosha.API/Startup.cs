@@ -1,12 +1,9 @@
-using Arnoosha.Core.Interfaces;
-using Arnoosha.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-
+using Arnoosha.API.Extensions;
+using Arnoosha.Infrastructure.Data;
 
 namespace Arnoosha.API
 {
@@ -16,33 +13,20 @@ namespace Arnoosha.API
 
         public Startup(IConfiguration configuration)
         {
-            _configuration = configuration;            
-        }        
-        
+            _configuration = configuration;
+        }
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddControllers();
-            services.AddDbContext<StoreContext>(x => x.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
+            services.AddApplicationServices();
+
+            services.AddDbContext<StoreContext>(x =>
+                x.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
         }
-        
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseApplicationServices();
         }
     }
 }

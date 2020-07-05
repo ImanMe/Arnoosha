@@ -1,33 +1,51 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Arnoosha.API.Dtos;
+using Arnoosha.API.Errors;
+using Arnoosha.Core.Entities;
 using Arnoosha.Core.Interfaces;
+using AutoMapper;
 
 namespace Arnoosha.API.Controllers
 {
-    [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : CustomControllerBase
     {
         private readonly IProductRepository _productRepository;
+        private readonly IMapper _mapper;
 
-        public ProductsController(IProductRepository productRepository)
+        public ProductsController(IProductRepository productRepository, IMapper mapper)
         {
             _productRepository = productRepository;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var result = await _productRepository.GetProductsAsync();
-            if (result == null) return NotFound("No products available");
-            return Ok(result);
+            var products = await _productRepository.GetProductsAsync();
+
+            if (!products.Any())
+                return NotFound(new ApiResponse(404, "No product was found!"));
+            
+            var productsDto = 
+                _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductDto>>(products);
+
+            return Ok(productsDto);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var result = await _productRepository.GetProductByIdAsync(id);
-            if (result == null) return NotFound("No product with that id");
-            return Ok(result);
+            var product = await _productRepository.GetProductByIdAsync(id);
+
+            if (product == null) 
+                return NotFound(new ApiResponse(404, "No product was found!"));
+                
+            var productDto = _mapper.Map<Product, ProductDto>(product);
+
+            return Ok(productDto);
         }
 
         [HttpGet("brands")]

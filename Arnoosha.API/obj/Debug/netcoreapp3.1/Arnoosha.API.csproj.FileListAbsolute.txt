@@ -1,6 +1,4 @@
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.csprojAssemblyReference.cache
-C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.csproj.CoreCompileInputs.cache
-C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.AssemblyInfoInputs.cache
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.AssemblyInfo.cs
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -64,3 +62,12 @@ C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\A
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\Data\SeedData\brands.json
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\Data\SeedData\products.json
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\Data\SeedData\types.json
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.csproj.CoreCompileInputs.cache
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.API\obj\Debug\netcoreapp3.1\Arnoosha.API.MvcApplicationPartsAssemblyInfo.cache
