@@ -21,10 +21,10 @@ namespace Arnoosha.API.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Get()
+        [HttpGet("")]
+        public async Task<IActionResult> Get([FromQuery]ProductQuery queryObj)
         {
-            var products = await _productRepository.GetProductsAsync();
+            var products = await _productRepository.GetProductsAsync(queryObj);
 
             if (!products.Any())
                 return NotFound(new ApiResponse(404, "No product was found!"));
