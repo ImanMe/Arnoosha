@@ -6,8 +6,8 @@ namespace Arnoosha.Core.Entities
     {
         public string SortBy { get; set; }
         public bool IsSortAscending { get; set; }
-        public int Page { get; set; }
-        public byte PageSize { get; set; }
+        public int Page { get; set; } = 1;
+        public byte PageSize { get; set; } = 5;
         public int ProductTypeId { get; set; }
         public int ProductBrandId { get; set; }
     }
