@@ -45,6 +45,12 @@ namespace Arnoosha.API.Extensions
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "API Document", Version = "v1" });
             });
 
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("corsPolicy", policy =>
+                    { policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin(); });
+            });
+
             return services;
         }
 
@@ -59,6 +65,8 @@ namespace Arnoosha.API.Extensions
             app.UseRouting();
 
             app.UseStaticFiles();
+
+            app.UseCors("corsPolicy");
 
             app.UseAuthorization();
 

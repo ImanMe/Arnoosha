@@ -19,24 +19,27 @@ namespace Arnoosha.Infrastructure.Data.Extensions
                 : query.OrderByDescending(columnsMap[queryObj.SortBy]);
         }
 
-        public static IQueryable<T> ApplyFiltering<T>(this IQueryable<T> query, IQueryObject queryObj, Dictionary<string, Expression<Func<T, bool>>> columnsMap)
-        {
-            if (!(queryObj is ProductQuery productQuery)) return query;
-
-            if (productQuery.ProductBrandId != 0 && columnsMap.ContainsKey("productBrandId"))
-                query = query.Where(columnsMap["productBrandId"]);
-
-            if (productQuery.ProductTypeId != 0 && columnsMap.ContainsKey("productTypeId"))
-                query = query.Where(columnsMap["productTypeId"]);
-
-            return query;
-        }
-
-        public static IQueryable<T> ApplyPaging<T>(this IQueryable<T> query, IQueryObject queryObj)
+        public static IQueryable<T> ApplyPaging<T>(this IQueryable<T> query, QueryObject queryObj)
         {
             return query
-                .Skip((queryObj.Page - 1) * queryObj.PageSize)
+                .Skip((queryObj.PageIndex - 1) * queryObj.PageSize)
                 .Take(queryObj.PageSize);
+        }
+
+        public static IQueryable<Product> ApplyProductFilterAndSearch(this IQueryable<Product> query, ProductQuery queryObj)
+        {
+            if (queryObj.TypeId != 0)
+                query = query
+                    .Where(x => x.ProductTypeId == queryObj.TypeId);
+
+            if (queryObj.BrandId != 0)
+                query = query.Where(x => x.ProductBrandId == queryObj.BrandId);
+
+            if (!string.IsNullOrEmpty(queryObj.Search))
+                query = query.Where(x => x.Name.ToLower()
+                    .Contains(queryObj.Search));
+
+            return query;
         }
     }
 }

@@ -29,20 +29,26 @@ namespace Arnoosha.Infrastructure.Data
                 .FirstOrDefaultAsync(p=> p.Id == id);
         }
 
-        public async Task<IReadOnlyList<Product>> GetProductsAsync(ProductQuery queryObj)
+        public async Task<QueryResult<Product>> GetProductsAsync(ProductQuery queryObj)
         {
             var query =  _context.Products
                 .Include(p=>p.ProductType)
                 .Include(p => p.ProductBrand)
                     .AsQueryable();
 
-            var filterColumnsMap = ColumnsMap.CreateFilterColumnsMap(queryObj);
+            query = query.ApplyProductFilterAndSearch(queryObj);
 
-            query = query.ApplyFiltering(queryObj, filterColumnsMap);
-
+            var count  = await query.CountAsync();
+            
             query = query.ApplyOrdering(queryObj, _sortColumnsMap);
 
-            return await query.ToListAsync();
+            query = query.ApplyPaging(queryObj);
+
+            var data = await query.ToListAsync();
+
+            var result = new QueryResult<Product>(queryObj.PageIndex, queryObj.PageSize, count, data);
+
+            return result;
         }
 
         public async Task<IReadOnlyList<ProductBrand>> GetProductBrandsAsync()

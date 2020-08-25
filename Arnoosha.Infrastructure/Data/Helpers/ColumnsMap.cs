@@ -15,15 +15,5 @@ namespace Arnoosha.Infrastructure.Data.Helpers
                 ["price"] = v => (double?)v.Price,
             };
         }
-
-        public static Dictionary<string, Expression<Func<Product, bool>>> CreateFilterColumnsMap(
-            ProductQuery queryObj = null)
-        {
-            return new Dictionary<string, Expression<Func<Product, bool>>>
-            {
-                ["productTypeId"] = v => v.ProductTypeId == queryObj.ProductTypeId,
-                ["productBrandId"] = v => v.ProductBrandId == queryObj.ProductBrandId,
-            };
-        }
     }
 }

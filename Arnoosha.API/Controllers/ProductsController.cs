@@ -21,18 +21,18 @@ namespace Arnoosha.API.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("")]
+        [HttpGet]
         public async Task<IActionResult> Get([FromQuery]ProductQuery queryObj)
         {
             var products = await _productRepository.GetProductsAsync(queryObj);
 
-            if (!products.Any())
+            if (products.Count == 0)
                 return NotFound(new ApiResponse(404, "No product was found!"));
             
-            var productsDto = 
-                _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductDto>>(products);
+            var queryResultDto = 
+                _mapper.Map<QueryResultDto<ProductDto>>(products);
 
-            return Ok(productsDto);
+            return Ok(queryResultDto);
         }
 
         [HttpGet("{id}")]
