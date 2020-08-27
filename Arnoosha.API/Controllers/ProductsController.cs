@@ -26,8 +26,8 @@ namespace Arnoosha.API.Controllers
         {
             var products = await _productRepository.GetProductsAsync(queryObj);
 
-            if (products.Count == 0)
-                return NotFound(new ApiResponse(404, "No product was found!"));
+            //if (products.Count == 0)
+            //    return NotFound(new ApiResponse(404, "No product was found!"));
             
             var queryResultDto = 
                 _mapper.Map<QueryResultDto<ProductDto>>(products);

@@ -18,7 +18,7 @@
             }
         }
 
-        private int _pageSize = 5;
+        private int _pageSize = 6;
         public int PageSize
         {
             get => _pageSize;
