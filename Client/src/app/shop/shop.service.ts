@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { ShopParams } from './../shared/models/shopParams';
 import { IProductType } from './../shared/models/product-type';
 import { IBrand } from './../shared/models/brand';
@@ -12,7 +13,7 @@ import { IProduct } from '../shared/models/product';
 })
 export class ShopService {
 
-  baseUrl = 'https://localhost:44352/api/';
+  baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
