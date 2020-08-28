@@ -1,9 +1,11 @@
+import { ShopParams } from './../shared/models/shopParams';
 import { IProductType } from './../shared/models/product-type';
 import { IBrand } from './../shared/models/brand';
 import { IPagination } from '../shared/models/pagination';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { IProduct } from '../shared/models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -14,23 +16,27 @@ export class ShopService {
 
   constructor(private http: HttpClient) { }
 
-  getProducts = (brandId?: number, productTypeId?: number, sort?: string, isSortAscending?: string) => {
+  getProducts = (shopParams: ShopParams) => {
     let params = new HttpParams();
 
-    if (brandId) {
-      params = params.append('brandId', brandId.toString());
+    if (shopParams.brandId !== 0) {
+      params = params.append('brandId', shopParams.brandId.toString());
     }
 
-    if (productTypeId) {
-      params = params.append('typeId', productTypeId.toString());
+    if (shopParams.productTypeId !== 0) {
+      params = params.append('typeId', shopParams.productTypeId.toString());
     }
 
-    if (sort) {
-      params = params.append('sortBy', sort);
-    }
+    params = params.append('sortBy', shopParams.sort);
 
-    if (isSortAscending) {
-      params = params.append('isSortAscending', isSortAscending);
+    params = params.append('isSortAscending', shopParams.isSortAscending);
+
+    params = params.append('pageSize', shopParams.pageSize.toString());
+
+    params = params.append('pageIndex', shopParams.pageIndex.toString());
+
+    if (shopParams.search) {
+      params = params.append('search', shopParams.search);
     }
 
     return this.http.get<IPagination>(`${this.baseUrl}products`, { observe: 'response', params })
@@ -39,6 +45,10 @@ export class ShopService {
           return response.body;
         })
       );
+  }
+
+  getProduct = (id: number) => {
+    return this.http.get<IProduct>(this.baseUrl + 'products/' + id)
   }
 
   getBrands = () => {
