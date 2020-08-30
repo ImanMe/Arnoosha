@@ -1,5 +1,5 @@
 <div
-    class="d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
+    class="d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3 bg-primary border-bottom shadow-sm fixed-top">
     <img src="/assets/images/logo-1.png" style="max-height: 70px;" alt="logo" routerLink="/" class="logo">
     <nav class="my-2 my-md-0 mr-md-3 text-uppercase" style="font-size: larger;">
         <a class="p-2" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
@@ -8,12 +8,11 @@
     </nav>
     <div class="d-flex align-items-center">
         <a class="position-relative">
-            <i class="fa fa-shopping-cart fa-2x mr-5 text-dark"></i>
+            <i class="fa fa-shopping-cart fa-2x mr-5"></i>
             <div class="cart-no">5</div>
         </a>
-        <a class="btn btn-outline-light mr-2"><i style="color: orangered;" class="fa fa-user-plus"
-                aria-hidden="true"></i><span class="text-muted"> Sign up</span></a>
-        <a class="btn btn-outline-light mr-3"><i style="color: orangered;" class="fa fa-user" aria-hidden="true"><span
-                    class="text-muted"> Login</span></i></a>
+        <a class="btn btn-outline-light mr-2"><i class="fa fa-user-plus mr-1" aria-hidden="true"></i> Sign up</a>
+        <a class="btn btn-outline-light mr-3"><i class="fa fa-user" aria-hidden="true"></i>
+            Login</a>
     </div>
 </div>

@@ -55,15 +55,19 @@ export class ShopComponent implements OnInit {
   }
 
   onProductTypeSelected = (productTypeId: number) => {
-    this.shopParams.productTypeId = productTypeId;
-    this.shopParams.pageIndex = 1;
-    this.getProducts();
+    if (this.shopParams.productTypeId !== productTypeId) {
+      this.shopParams.productTypeId = productTypeId;
+      this.shopParams.pageIndex = 1;
+      this.getProducts();
+    }
   }
 
   onBrandSelected = (brandId: number) => {
-    this.shopParams.brandId = brandId;
-    this.shopParams.pageIndex = 1;
-    this.getProducts();
+    if (this.shopParams.brandId !== brandId) {
+      this.shopParams.brandId = brandId;
+      this.shopParams.pageIndex = 1;
+      this.getProducts();
+    }
   }
 
   onSortSelected = (sort: string) => {
@@ -96,8 +100,10 @@ export class ShopComponent implements OnInit {
   }
 
   onReset = () => {
-    this.searchTerm.nativeElement.value = '';
-    this.shopParams = new ShopParams();
-    this.getProducts();
+    if (JSON.stringify(this.shopParams) !== JSON.stringify(new ShopParams())) {
+      this.searchTerm.nativeElement.value = '';
+      this.shopParams = new ShopParams();
+      this.getProducts();
+    }
   }
 }

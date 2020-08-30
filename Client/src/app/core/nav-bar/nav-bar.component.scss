@@ -4,16 +4,16 @@
   min-width: 25px;
   border-radius: 50%;
   font-size: 1em;
-  background: green;
+  background: #364d63;
+  color: white;
   text-align: center;
   top: -12px;
   right: 32px;
-  color: white;
 }
 
 a {
   text-decoration: none;
-  color: #343a40;
+  // color: #343a40;
 
   &.active {
     color: orange;
