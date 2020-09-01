@@ -1,19 +1,26 @@
 .cart-no {
   position: absolute;
-  min-height: 25px;
-  min-width: 25px;
+  // min-height: 25px;
+  min-height: 21px;
+  min-width: 22px;
   border-radius: 50%;
   font-size: 1em;
-  background: #364d63;
+  // background: #364d63;
+  background: green;
   color: white;
   text-align: center;
   top: -12px;
   right: 32px;
 }
 
+.fa-shopping-cart {
+  color: white;
+}
+
 a {
   text-decoration: none;
   // color: #343a40;
+  color: white;
 
   &.active {
     color: orange;
@@ -26,4 +33,11 @@ a {
   &:focus {
     outline: none;
   }
+}
+
+.btn-white {
+  // border-color: white !important;
+  // color: white !important;
+  // background-color: white;
+  // color: black !important;
 }
