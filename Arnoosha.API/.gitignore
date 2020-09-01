@@ -13,6 +13,9 @@
 *.userprefs
 
 # Build results
+
+[Dd]ebug/
+[Bb]in/
 netcoreapp3.1
 v16
 [Dd]ebug/

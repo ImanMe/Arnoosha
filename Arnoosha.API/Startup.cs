@@ -3,7 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Arnoosha.API.Extensions;
+using Arnoosha.API.Mappings;
+using Arnoosha.Core.Interfaces;
 using Arnoosha.Infrastructure.Data;
+using AutoMapper;
+using StackExchange.Redis;
 
 namespace Arnoosha.API
 {
@@ -18,10 +22,22 @@ namespace Arnoosha.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplicationServices();
+            services.AddAutoMapper(typeof(MappingProfile));
+
+            services.AddControllers();
 
             services.AddDbContext<StoreContext>(x =>
                 x.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddSingleton<IConnectionMultiplexer>(c =>
+            {
+                var configuration = ConfigurationOptions.Parse(
+                    _configuration.GetConnectionString("Redis"), true);
+
+                return ConnectionMultiplexer.Connect(configuration);
+            });
+
+            services.AddApplicationServices();
         }
 
         public void Configure(IApplicationBuilder app)
