@@ -1,9 +1,9 @@
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\bin\Debug\netcoreapp3.1\Arnoosha.Core.deps.json
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\bin\Debug\netcoreapp3.1\Arnoosha.Core.dll
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\bin\Debug\netcoreapp3.1\Arnoosha.Core.pdb
+C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.csprojAssemblyReference.cache
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.csproj.CoreCompileInputs.cache
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.AssemblyInfoInputs.cache
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.AssemblyInfo.cs
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.dll
 C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.pdb
-C:\Users\imanm\Documents\Courses\Arnoosha\Arnoosha.Core\obj\Debug\netcoreapp3.1\Arnoosha.Core.csprojAssemblyReference.cache
