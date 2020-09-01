@@ -14,10 +14,11 @@
 
 # Build results
 
-[Dd]ebug/
-[Bb]in/
-netcoreapp3.1
-v16
+Arnoosha.API/[Dd]ebug/
+Arnoosha.API/[Bb]in/
+Arnoosha.API/netcoreapp3.1
+Arnoosha.API/v16
+Arnoosha.API/*.suo
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
