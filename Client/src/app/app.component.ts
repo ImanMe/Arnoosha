@@ -1,7 +1,5 @@
-import { IPagination } from './shared/models/pagination';
+import { BasketService } from 'src/app/basket/basket.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { IProduct } from './shared/models/product';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +7,18 @@ import { IProduct } from './shared/models/product';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'Blah';
-  products: IProduct[];
+  title = 'Arnoosha';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private basketService: BasketService) { }
 
   ngOnInit(): void {
-    this.http.get('https://localhost:44352/api/products?pageSize=50').subscribe((response: IPagination) => {
-      this.products = response.data;
-    }, error => console.log(error));
+    const basketId = localStorage.getItem('basket_id');
+    if (basketId) {
+      this.basketService.getBasket(basketId).subscribe(() => {
+        console.log('initialised basket');
+      }, error => {
+        console.log(error);
+      });
+    }
   }
 }

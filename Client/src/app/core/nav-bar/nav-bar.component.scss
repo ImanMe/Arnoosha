@@ -6,8 +6,8 @@
   border-radius: 50%;
   font-size: 1em;
   // background: #364d63;
-  background: green;
-  color: white;
+  background: rgb(75, 191, 115);
+  color: black;
   text-align: center;
   top: -12px;
   right: 32px;
@@ -33,11 +33,4 @@ a {
   &:focus {
     outline: none;
   }
-}
-
-.btn-white {
-  // border-color: white !important;
-  // color: white !important;
-  // background-color: white;
-  // color: black !important;
 }

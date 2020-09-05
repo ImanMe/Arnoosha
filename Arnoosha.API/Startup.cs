@@ -4,7 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Arnoosha.API.Extensions;
 using Arnoosha.API.Mappings;
-using Arnoosha.Core.Interfaces;
 using Arnoosha.Infrastructure.Data;
 using AutoMapper;
 using StackExchange.Redis;
