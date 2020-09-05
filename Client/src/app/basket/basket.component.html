@@ -2,7 +2,6 @@
     <div *ngIf="(basket$ | async) === null">
         <p>There are no items in your basket</p>
     </div>
-
     <div *ngIf="(basket$ | async) as basket">
         <div class="pb-5">
             <div class="container">
@@ -58,24 +57,34 @@
                                         <td class="align-middle"><strong>{{item.price | currency}}</strong></td>
                                         <td class="align-middle">
                                             <div class="d-flex align-center text-primary mr-2">
-                                                <i class="fa fa-minus-circle text-info mr-2"
+                                                <i (click)="decrementItemQuantity(item)"
+                                                    class="fa fa-minus-circle text-warning mr-2"
                                                     style="cursor: pointer; font-size: 2em;">
                                                 </i>
                                                 <span class="font-weight-bold"
                                                     style="font-size: 1.5em;">{{item.quantity}}</span>
-                                                <i class="fa fa-plus-circle text-info mx-2"
+                                                <i (click)="incrementItemQuantity(item)"
+                                                    class="fa fa-plus-circle text-warning mx-2"
                                                     style="cursor: pointer; font-size: 2em;">
                                                 </i>
                                             </div>
                                         </td>
                                         <td class="align-middle">
                                             <strong>{{item.price * item.quantity | currency}}</strong></td>
-                                        <td class="align-middle text-center"><a href="" class="text-primary"><i
-                                                    class="fa fa-trash-o" style="font-size: 2em;"></i></a></td>
+                                        <td class="align-middle text-center"><a class="text-primary"><i
+                                                    (click)="removeBasketItem(item)" class="fa fa-trash-o"
+                                                    style="font-size: 2em; cursor: pointer;"></i></a></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 offset-6">
+                        <app-order-totals></app-order-totals>
+                        <a routerLink="/checkout" class="btn btn-outline btn-primary py-2 btn-block">
+                            Proceed to checkout</a>
                     </div>
                 </div>
             </div>
